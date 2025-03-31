@@ -17,7 +17,7 @@ It's just a fun little game based on Wordle's style, where users have 6 attempts
 - [ ] **a11y**: Make the page & game more accessible. 
 - [X] **Stats**: Like Wordle, display stats for the user based on their play history. Likely using a cookie.
 - [X] **No refresh**: Store user's score for the day, no replay on refresh.
-- [ ] **Favicon**
+- [X] **Favicon**
 - [X] **Contrast toggle**: Sometimes the function to calculate either black/white to contrast on each individual guess doesn't work super well, so I want to add a toggle to make it possible for the user to switch the text between black and white themselves.
 - [ ] **Backend DB**: For storing the colors away from public view. Maybe start with a CSV on GitHub Gist.
 - [ ] **Contributing**: I want to make a contributing guide so people can submit colors, feature ideas, and code!
