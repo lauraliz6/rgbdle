@@ -8,6 +8,7 @@ import HelpModal from "./components/HelpModal";
 import Game from "./components/Game";
 import BasicDateCalendar from "./components/PastDays";
 import { TheColor, TheDay, pickColor, getFormattedDate } from "./components/TheColor";
+import Gist from "./components/Gist";
 
 function App() {
   const [helpOpen, setHelpOpen] = useState(false);
@@ -39,6 +40,7 @@ function App() {
         <HelpModal open={helpOpen} passHelpOpen={setHelpOpen} />
         <BasicDateCalendar open = {pastOpen} passPastOpen={setPastOpen} />
         <Game />
+        <Gist />
       </div>
       </TheDay.Provider>
     </TheColor.Provider>

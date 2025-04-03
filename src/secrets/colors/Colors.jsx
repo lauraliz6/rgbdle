@@ -1,3 +1,5 @@
+//https://docs.github.com/en/rest/gists/gists?apiVersion=2022-11-28#get-a-gist
+
 //converted from hex array originally from here: https://gist.github.com/mucar/3898821
 //372 colors, will need more eventually
 export const colors = [
