@@ -1,6 +1,9 @@
 import { Octokit } from "octokit";
 
 const formatDate = (date) => {
+    if (!date){
+        return;
+    }
     const formattedDate = date.toLocaleDateString('en-GB', {
         day: 'numeric', month: 'short', year: '2-digit'
       }).replace(/ /g, '-');
@@ -22,10 +25,12 @@ const getGist = async() => {
     return colorsJSON;
 }
 
-export async function pickColor(){
+export async function pickColor(date){
+    if (!date){
+        return;
+    }
     const colorsList = await getGist();
-    const todaysDate = new Date();
-    const todaysDateFormatted = formatDate(todaysDate);
+    const todaysDateFormatted = formatDate(date);
     const todaysColorObj = colorsList.find(color => color.date == todaysDateFormatted);
     const todaysColor = todaysColorObj.rgb;
     return todaysColor;

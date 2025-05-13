@@ -1,13 +1,14 @@
 import { createContext } from "react";
-import { colors } from "../secrets/colors/Colors";
+import { pickColor } from "../functions/FetchFromGist";
+
 
 export function daysBetween(date) {
   const releaseDay = "04/22/2022";
   const today = new Date(date)
   const formatToday = getFormattedDate(today).toString();
 
-  const daysBetween = getDaysBetween(
-    new Date(releaseDay),
+  const daysBetween = (
+    new Date(releaseDay) -
     new Date(formatToday)
   );
   return Math.ceil(daysBetween);
@@ -22,21 +23,12 @@ export function getFormattedDate(date) {
   return month + "/" + day + "/" + year;
 }
 
-//from: https://www.geeksforgeeks.org/how-to-calculate-the-number-of-days-between-two-dates-in-javascript/
-function getDaysBetween(date1, date2) {
-  // To calculate the time difference of two dates
-  var Difference_In_Time = date2.getTime() - date1.getTime();
-  // To calculate the no. of days between two dates
-  var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-  return Difference_In_Days;
-}
-
-export function pickColor(date = new Date()) {
-  const picked = colors[daysBetween(date)];
+export async function fetchColor(date) {
+  const picked = await pickColor(date);
   if (picked) {
-    return colors[daysBetween(date)];
+    return picked;
   } else {
-    return "rgba(0,0,0,1)";
+    return "0,0,0";
   }
 }
 

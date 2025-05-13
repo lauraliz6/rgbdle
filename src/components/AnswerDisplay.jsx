@@ -17,8 +17,11 @@ export default function AnswerDisplay(props) {
     };
 
     const breakApartVals = () => {
+      if (!answerColor){
+        return;
+      }
       const stringSplit = answerColor.split(",");
-      const R = parseInt(stringSplit[0].split("(").pop());
+      const R = parseInt(stringSplit[0]);
       const G = parseInt(stringSplit[1]);
       const B = parseInt(stringSplit[2]);
       setRGB({ R, G, B });

@@ -5,7 +5,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import Box from '@mui/material/Box';
 import Modal from "@mui/material/Modal";
-import { TheColor, TheDay, pickColor, getFormattedDate } from "./TheColor";
+import { TheColor, TheDay, fetchColor, getFormattedDate } from "./TheColor";
 import { PickersDay } from "@mui/x-date-pickers";
 import { green, red } from "@mui/material/colors";
 
@@ -66,7 +66,7 @@ export default function BasicDateCalendar(props) {
     const formattedDate = getFormattedDate(selectedDate);
     setNewDate(formattedDate);
     newDay(formattedDate);
-    newColor(pickColor(formattedDate));
+    newColor(fetchColor(selectedDate));
     handleClose();
   }
 
