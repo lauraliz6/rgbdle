@@ -10,7 +10,7 @@ export default function AnswerDisplay(props) {
 
   useEffect(() => {
     const draw = (ctx) => {
-      ctx.fillStyle = answerColor;
+      ctx.fillStyle = `rgb(${answerColor})`;
       ctx.beginPath();
       ctx.rect(0, 0, 384, 70);
       ctx.fill();
@@ -20,6 +20,7 @@ export default function AnswerDisplay(props) {
       if (!answerColor){
         return;
       }
+      console.log(answerColor);
       const stringSplit = answerColor.split(",");
       const R = parseInt(stringSplit[0]);
       const G = parseInt(stringSplit[1]);

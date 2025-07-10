@@ -39,7 +39,6 @@ function App() {
     <TheColor.Provider value={{ answerColor, newColor }}>
       <TheDay.Provider value={{ currentDay, newDay }}>
       <div className="App">
-        <p>{answerColor}</p>
         <CssBaseline />
         <div>
           <Icons passHelpOpen={setHelpOpen} passPastOpen={setPastOpen}/>

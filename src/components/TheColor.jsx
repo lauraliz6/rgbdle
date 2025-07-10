@@ -1,10 +1,9 @@
 import { createContext } from "react";
 import { pickColor } from "../functions/FetchFromGist";
 
-
 export function daysBetween(date) {
   const releaseDay = "04/22/2022";
-  const today = new Date(date)
+  const today = new Date(date);
   const formatToday = getFormattedDate(today).toString();
 
   const daysBetween = (
